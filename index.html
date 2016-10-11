@@ -1,0 +1,90 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<title>js封装-zJquery</title> 
+<style> 
+    .hide{
+        display:none;
+    }
+    .show{
+        display:block;
+    }
+    .myP{
+        font-size:18px;
+    }
+</style> 
+</head> 
+<body> 
+
+    <div id="infos" class="ceshi" data-time='2016'>
+        <h2>查看某个元素的节点<b class="china">中国</b></h2>
+        <p class="myP">csdn</p>
+    </div>
+    <input type="text" value="你好" class="inputs">
+    <ul class="myUl">
+        <li>你好吗</li>
+        <li>我很好</li>
+        <li>嗯嗯嗯</li>
+    </ul>
+    <div id="num1" style="height:1000px;background:yellow;width:100%"></div>
+
+    <div id="num2" style="height:800px;background:black;width:100%;"></div>
+
+<script src="zJquery.js"></script>
+<script type="text/javascript"> 
+    $('#infos h2').click(function(e){
+        // e.preventDefault();
+        // e.stopPropagation();
+        // $(this).find('h2').eq(0).css('background','red').addClass('enene');
+        // if($('#infos').hasClass('ceshi')){
+            console.log(222);
+            $(this).next().append('<div>饿呢</div>');
+        // }
+    })
+    console.log($('.inputs').val());
+
+
+
+    // var ids = document.getElementById('infos');
+    // // console.log(siblings(ids))
+    // $('#infos').on('click',function(){
+    //     console.log(777);
+    // });
+    // console.log($('.myUl').find('li').length());
+
+    $('.myUl li').each(function(i){
+        console.log(i);
+    });
+    console.log($('.myUl li').length())
+
+    var arry = ['香港','台湾','新加波','马拉西亚'];
+    $().each(arry,function(index,val){  
+    //  $(this).append('<b>嗯嗯</b>');
+        console.log($('').html());
+    });
+    // $('.myUl li').before('<b>嗯儿女</b>');
+    arry.push('日本');
+    console.log(arry);
+
+    console.log($('.myP').css('color','red').parent(),12);
+
+    console.log($('.china').parent());
+
+    $('.myUl li').click(function(){
+        var $this=$(this),$ind=$this.index();
+        console.log($ind);
+    });
+    
+    console.log($('.myP').css('font-size'));
+
+    console.log($('.ceshi').find('h2').next().html());
+
+    var myArr = ' ehll '
+
+    console.log($().trim(myArr),myArr);
+
+
+</script> 
+</body> 
+</html> 
